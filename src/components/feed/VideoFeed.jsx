@@ -1,9 +1,10 @@
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import { StyleSheet, View } from "react-native";
 import { FlashList } from "@shopify/flash-list";
 import { INITIAL_FEED_ITEMS } from "../../constants/mockData";
 import { LAYOUT, COLORS } from "../../constants/theme";
 import { StorageService } from "../../services/storage";
+import { VideoCacheService } from "../../services/videoCache";
 import { VideoCard } from "./VideoCard";
 import { SponsoredCard } from "./SponsoredCard";
 import { SkeletonPlaceholder } from "./SkeletonPlaceholder";
@@ -12,6 +13,10 @@ import { UpscaleToast } from "./UpscaleToast";
 export const VideoFeed = () => {
   const [feedData, setFeedData] = useState(INITIAL_FEED_ITEMS);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    VideoCacheService.preloadUrls(INITIAL_FEED_ITEMS);
+  }, []);
   const [isMuted, setIsMuted] = useState(() => StorageService.isMuted());
   const [feedDimensions, setFeedDimensions] = useState({
     width: LAYOUT.screenWidth,
@@ -82,7 +87,8 @@ export const VideoFeed = () => {
         );
       }
 
-      if (index !== activeIndex) {
+      // Mount active card and pre-buffer the next card (activeIndex + 1) for zero-latency scrolling
+      if (index !== activeIndex && index !== activeIndex + 1) {
         return (
           <SkeletonPlaceholder
             height={feedDimensions.height}
