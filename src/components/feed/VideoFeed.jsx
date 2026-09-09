@@ -87,8 +87,7 @@ export const VideoFeed = () => {
         );
       }
 
-      // Mount active card and pre-buffer the next card (activeIndex + 1) for zero-latency scrolling
-      if (index !== activeIndex && index !== activeIndex + 1) {
+      if (Math.abs(index - activeIndex) > 1) {
         return (
           <SkeletonPlaceholder
             height={feedDimensions.height}
@@ -127,7 +126,7 @@ export const VideoFeed = () => {
         onViewableItemsChanged={onViewableItemsChanged.current}
         onEndReached={handleEndReached}
         onEndReachedThreshold={0.5}
-        drawDistance={feedDimensions.height}
+        drawDistance={feedDimensions.height * 2}
         disableAutoLayout
       />
 
