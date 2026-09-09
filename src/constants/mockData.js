@@ -1,27 +1,5 @@
 export const INITIAL_FEED_ITEMS = [
   {
-    "id": "reel-10395606",
-    "type": "video",
-    "handle": "@dmitry_marchenkov",
-    "description": "Sunlight seen through leaves",
-    "standardUrl": "https://videos.pexels.com/video-files/10395606/10395606-hd_1080_1920_24fps.mp4",
-    "upscaledUrl": "https://videos.pexels.com/video-files/10395606/10395606-hd_1080_1920_24fps.mp4",
-    "likes": 90067,
-    "comments": 2768,
-    "shares": 5425
-  },
-  {
-    "id": "reel-34942485",
-    "type": "video",
-    "handle": "@sergio_raffa",
-    "description": "Serene forest trees reaching towards the sky",
-    "standardUrl": "https://videos.pexels.com/video-files/34942485/14801490_1080_1920_30fps.mp4",
-    "upscaledUrl": "https://videos.pexels.com/video-files/34942485/14801490_1080_1920_30fps.mp4",
-    "likes": 115961,
-    "comments": 3155,
-    "shares": 6498
-  },
-  {
     "id": "reel-32200251",
     "type": "video",
     "handle": "@c1_superstar",
@@ -44,16 +22,6 @@ export const INITIAL_FEED_ITEMS = [
     "shares": 5222
   },
   {
-    "id": "sponsor-1",
-    "type": "sponsored",
-    "brand": "LinkSphere UltraCloud",
-    "title": "Next-Gen Edge Media Delivery at 60 FPS",
-    "description": "Sub-10ms video streaming and real-time upscaling architecture.",
-    "ctaText": "Explore Platform",
-    "ctaUrl": "https://linksphere.tech",
-    "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80"
-  },
-  {
     "id": "reel-28798096",
     "type": "video",
     "handle": "@ertabbt",
@@ -74,6 +42,16 @@ export const INITIAL_FEED_ITEMS = [
     "likes": 60654,
     "comments": 2716,
     "shares": 2704
+  },
+  {
+    "id": "sponsor-1",
+    "type": "sponsored",
+    "brand": "LinkSphere UltraCloud",
+    "title": "Next-Gen Edge Media Delivery at 60 FPS",
+    "description": "Sub-10ms video streaming and real-time upscaling architecture.",
+    "ctaText": "Explore Platform",
+    "ctaUrl": "https://linksphere.tech",
+    "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": "reel-20151149",

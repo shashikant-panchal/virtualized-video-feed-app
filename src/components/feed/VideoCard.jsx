@@ -141,21 +141,16 @@ export const VideoCard = ({
           ) : null}
 
           {!isUpscaled && (
-            <>
-              <BlurView
-                intensity={28}
-                tint="default"
-                style={StyleSheet.absoluteFill}
-                pointerEvents="none"
-              />
-              <View
-                pointerEvents="none"
-                style={[
-                  StyleSheet.absoluteFill,
-                  { backgroundColor: "rgba(10, 10, 14, 0.08)" },
-                ]}
-              />
-            </>
+            <View
+              pointerEvents="none"
+              style={[
+                StyleSheet.absoluteFill,
+                {
+                  backgroundColor: "rgba(10, 10, 14, 0.22)",
+                  backdropFilter: "blur(4px)",
+                },
+              ]}
+            />
           )}
 
           {isUpscaled && (

@@ -82,7 +82,7 @@ export const VideoFeed = () => {
         );
       }
 
-      if (Math.abs(index - activeIndex) > 1) {
+      if (index !== activeIndex) {
         return (
           <SkeletonPlaceholder
             height={feedDimensions.height}
