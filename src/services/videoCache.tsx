@@ -4,12 +4,13 @@ import {
   setVideoCacheSizeAsync,
   getCurrentVideoCacheSize,
 } from "expo-video";
+import { FeedItem } from "../types/feed";
 
 const MAX_CACHE_SIZE = 1024 * 1024 * 1024;
 let isInitialized = false;
 
 export const VideoCacheService = {
-  async initVideoCache() {
+  async initVideoCache(): Promise<void> {
     if (isInitialized) return;
     isInitialized = true;
 
@@ -25,13 +26,13 @@ export const VideoCacheService = {
     });
   },
 
-  async clearCache() {
+  async clearCache(): Promise<void> {
     try {
       await clearVideoCacheAsync();
     } catch {}
   },
 
-  getCacheSize() {
+  getCacheSize(): number {
     try {
       return getCurrentVideoCacheSize();
     } catch {
@@ -39,7 +40,7 @@ export const VideoCacheService = {
     }
   },
 
-  preloadUrls(items = []) {
+  preloadUrls(items: FeedItem[] = []): void {
     if (!items || !items.length) return;
 
     items.forEach((item, index) => {

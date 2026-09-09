@@ -1,4 +1,6 @@
-export const INITIAL_FEED_ITEMS = [
+import { FeedItem } from "../types/feed";
+
+export const INITIAL_FEED_ITEMS: FeedItem[] = [
   {
     "id": "reel-32200251",
     "type": "video",

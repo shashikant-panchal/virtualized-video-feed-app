@@ -9,14 +9,15 @@ import { VideoCacheService } from "../services/videoCache";
 
 LogBox.ignoreLogs(["VideoPlayer.replace"]);
 
-export default function RootLayout() {
+export default function RootLayout(): React.JSX.Element {
   useEffect(() => {
     VideoCacheService.initVideoCache();
   }, []);
+
   return (
     <GestureHandlerRootView style={styles.container}>
       <SafeAreaProvider>
-        <StatusBar style="light" translucent backgroundColor="transparent" />
+        <StatusBar style="light" />
         <Stack
           screenOptions={{
             headerShown: false,

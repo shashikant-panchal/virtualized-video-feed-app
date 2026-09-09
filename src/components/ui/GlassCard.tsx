@@ -1,9 +1,17 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
-import { BlurView } from "expo-blur";
+import { StyleSheet, View, StyleProp, ViewStyle } from "react-native";
+import { BlurView, BlurTint } from "expo-blur";
 import { COLORS, LAYOUT } from "../../constants/theme";
 
-export const GlassCard = ({
+interface GlassCardProps {
+  children: React.ReactNode;
+  style?: StyleProp<ViewStyle>;
+  intensity?: number;
+  tint?: BlurTint;
+  borderRadius?: number;
+}
+
+export const GlassCard: React.FC<GlassCardProps> = ({
   children,
   style,
   intensity = 30,

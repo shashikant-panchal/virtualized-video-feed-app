@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   StyleSheet,
   Text,
@@ -12,8 +12,15 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Share2, Sparkles } from "lucide-react-native";
 import { COLORS, LAYOUT } from "../../constants/theme";
 import { GlassCard } from "../ui/GlassCard";
+import { SponsoredFeedItem } from "../../types/feed";
 
-export const SponsoredCard = ({
+interface SponsoredCardProps {
+  item: SponsoredFeedItem;
+  height?: number;
+  width?: number;
+}
+
+export const SponsoredCard: React.FC<SponsoredCardProps> = ({
   item,
   height = LAYOUT.screenHeight,
   width = LAYOUT.screenWidth,

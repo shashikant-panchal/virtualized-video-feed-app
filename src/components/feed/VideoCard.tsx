@@ -3,14 +3,24 @@ import { StyleSheet, View, Share } from "react-native";
 import { useVideoPlayer, VideoView } from "expo-video";
 import { useEventListener } from "expo";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
-import { BlurView } from "expo-blur";
 import { LinearGradient } from "expo-linear-gradient";
 import { COLORS, LAYOUT } from "../../constants/theme";
 import { StorageService } from "../../services/storage";
-import { HeartBurst } from "./HeartBurst";
+import { HeartBurst, HeartBurstRef } from "./HeartBurst";
 import { VideoControls } from "./VideoControls";
+import { VideoFeedItem } from "../../types/feed";
 
-export const VideoCard = ({
+interface VideoCardProps {
+  item: VideoFeedItem;
+  isActive: boolean;
+  isMuted: boolean;
+  onToggleMute: () => void;
+  onTriggerToast?: (text: string) => void;
+  height?: number;
+  width?: number;
+}
+
+export const VideoCard: React.FC<VideoCardProps> = ({
   item,
   isActive,
   isMuted,
@@ -19,13 +29,13 @@ export const VideoCard = ({
   height = LAYOUT.screenHeight,
   width = LAYOUT.screenWidth,
 }) => {
-  const heartBurstRef = useRef(null);
+  const heartBurstRef = useRef<HeartBurstRef | null>(null);
 
-  const [isLiked, setIsLiked] = useState(() => StorageService.isLiked(item.id));
-  const [likeDelta, setLikeDelta] = useState(() =>
+  const [isLiked, setIsLiked] = useState<boolean>(() => StorageService.isLiked(item.id));
+  const [likeDelta, setLikeDelta] = useState<number>(() =>
     StorageService.getLikeDelta(item.id)
   );
-  const [isUpscaled, setIsUpscaled] = useState(() =>
+  const [isUpscaled, setIsUpscaled] = useState<boolean>(() =>
     StorageService.isUpscaleEnabled()
   );
 
@@ -69,7 +79,7 @@ export const VideoCard = ({
   }, [isLiked, likeDelta, item.id]);
 
   const handleDoubleTap = useCallback(
-    (x, y) => {
+    (x: number, y: number) => {
       heartBurstRef.current?.trigger(x, y);
 
       if (!isLiked) {
@@ -191,7 +201,11 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   clarityFilter: {
-    ...StyleSheet.absoluteFillObject,
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
     backgroundColor: "rgba(6, 182, 212, 0.04)",
     borderWidth: 0.5,
     borderColor: "rgba(6, 182, 212, 0.2)",

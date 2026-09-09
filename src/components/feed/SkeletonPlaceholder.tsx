@@ -10,7 +10,12 @@ import Animated, {
 } from "react-native-reanimated";
 import { COLORS, LAYOUT } from "../../constants/theme";
 
-export const SkeletonPlaceholder = ({
+interface SkeletonPlaceholderProps {
+  height?: number;
+  width?: number;
+}
+
+export const SkeletonPlaceholder: React.FC<SkeletonPlaceholderProps> = ({
   height = LAYOUT.screenHeight,
   width = LAYOUT.screenWidth,
 }) => {

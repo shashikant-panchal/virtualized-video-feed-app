@@ -11,10 +11,11 @@ import Animated, {
 } from "react-native-reanimated";
 import { Sparkles } from "lucide-react-native";
 import { COLORS, LAYOUT } from "../../constants/theme";
+import { UpscaleToastRef } from "../../types/feed";
 
-export const UpscaleToast = forwardRef((props, ref) => {
-  const [toastText, setToastText] = useState("Upscaled 1080p");
-  const [visible, setVisible] = useState(false);
+export const UpscaleToast = forwardRef<UpscaleToastRef, object>((props, ref) => {
+  const [toastText, setToastText] = useState<string>("Upscaled 1080p");
+  const [visible, setVisible] = useState<boolean>(false);
 
   const opacity = useSharedValue(0);
   const translateY = useSharedValue(-20);

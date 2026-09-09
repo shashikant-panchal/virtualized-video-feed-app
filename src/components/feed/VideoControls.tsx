@@ -11,15 +11,30 @@ import {
   Sparkles,
 } from "lucide-react-native";
 import { COLORS, LAYOUT } from "../../constants/theme";
+import { VideoFeedItem } from "../../types/feed";
 
-const formatCount = (num) => {
+const formatCount = (num: number): string => {
   if (!num) return "0";
   if (num >= 1000000) return (num / 1000000).toFixed(1) + "M";
   if (num >= 1000) return (num / 1000).toFixed(1) + "K";
   return String(num);
 };
 
-export const VideoControls = ({
+interface VideoControlsProps {
+  item: VideoFeedItem;
+  height: number;
+  width: number;
+  isLiked: boolean;
+  likeCount: number;
+  isUpscaled: boolean;
+  isMuted: boolean;
+  onToggleLike: () => void;
+  onToggleUpscale: () => void;
+  onToggleMute: () => void;
+  onShare: () => void;
+}
+
+export const VideoControls: React.FC<VideoControlsProps> = ({
   item,
   height,
   width,
