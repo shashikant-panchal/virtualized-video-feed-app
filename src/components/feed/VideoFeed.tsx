@@ -1,6 +1,6 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
-import { StyleSheet, View } from "react-native";
-import { FlashList } from "@shopify/flash-list";
+import { StyleSheet, View, LayoutChangeEvent, ViewToken } from "react-native";
+import { FlashList, ListRenderItemInfo } from "@shopify/flash-list";
 import { INITIAL_FEED_ITEMS } from "../../constants/mockData";
 import { LAYOUT, COLORS } from "../../constants/theme";
 import { StorageService } from "../../services/storage";
@@ -9,24 +9,31 @@ import { VideoCard } from "./VideoCard";
 import { SponsoredCard } from "./SponsoredCard";
 import { SkeletonPlaceholder } from "./SkeletonPlaceholder";
 import { UpscaleToast } from "./UpscaleToast";
+import { FeedItem, UpscaleToastRef } from "../../types/feed";
 
-export const VideoFeed = () => {
-  const [feedData, setFeedData] = useState(INITIAL_FEED_ITEMS);
-  const [activeIndex, setActiveIndex] = useState(0);
+export const VideoFeed: React.FC = () => {
+  const [feedData, setFeedData] = useState<FeedItem[]>(
+    INITIAL_FEED_ITEMS as FeedItem[]
+  );
+  const [activeIndex, setActiveIndex] = useState<number>(0);
 
   useEffect(() => {
     VideoCacheService.preloadUrls(INITIAL_FEED_ITEMS);
   }, []);
-  const [isMuted, setIsMuted] = useState(() => StorageService.isMuted());
-  const [feedDimensions, setFeedDimensions] = useState({
+
+  const [isMuted, setIsMuted] = useState<boolean>(() => StorageService.isMuted());
+  const [feedDimensions, setFeedDimensions] = useState<{
+    width: number;
+    height: number;
+  }>({
     width: LAYOUT.screenWidth,
     height: LAYOUT.screenHeight,
   });
 
-  const upscaleToastRef = useRef(null);
-  const loopCountRef = useRef(1);
+  const upscaleToastRef = useRef<UpscaleToastRef | null>(null);
+  const loopCountRef = useRef<number>(1);
 
-  const handleLayout = useCallback((e) => {
+  const handleLayout = useCallback((e: LayoutChangeEvent) => {
     const { width, height } = e.nativeEvent.layout;
     if (width > 0 && height > 0) {
       setFeedDimensions((prev) => {
@@ -49,12 +56,12 @@ export const VideoFeed = () => {
     });
   }, []);
 
-  const handleTriggerToast = useCallback((text) => {
+  const handleTriggerToast = useCallback((text: string) => {
     upscaleToastRef.current?.show(text);
   }, []);
 
   const handleEndReached = useCallback(() => {
-    const nextBatch = INITIAL_FEED_ITEMS.map((item) => ({
+    const nextBatch = (INITIAL_FEED_ITEMS as FeedItem[]).map((item) => ({
       ...item,
       id: `${item.id}_loop_${loopCountRef.current}`,
     }));
@@ -66,17 +73,19 @@ export const VideoFeed = () => {
     itemVisiblePercentThreshold: 50,
   });
 
-  const onViewableItemsChanged = useRef(({ viewableItems }) => {
-    if (viewableItems && viewableItems.length > 0) {
-      const topItem = viewableItems[0];
-      if (topItem && typeof topItem.index === "number") {
-        setActiveIndex(topItem.index);
+  const onViewableItemsChanged = useRef(
+    ({ viewableItems }: { viewableItems: ViewToken[]; changed: ViewToken[] }) => {
+      if (viewableItems && viewableItems.length > 0) {
+        const topItem = viewableItems[0];
+        if (topItem && typeof topItem.index === "number") {
+          setActiveIndex(topItem.index);
+        }
       }
     }
-  });
+  );
 
   const renderItem = useCallback(
-    ({ item, index }) => {
+    ({ item, index }: ListRenderItemInfo<FeedItem>) => {
       if (item.type === "sponsored") {
         return (
           <SponsoredCard
@@ -111,7 +120,7 @@ export const VideoFeed = () => {
     [feedDimensions, activeIndex, isMuted, handleToggleMute, handleTriggerToast]
   );
 
-  const keyExtractor = useCallback((item) => item.id, []);
+  const keyExtractor = useCallback((item: FeedItem) => item.id, []);
 
   return (
     <View style={styles.container} onLayout={handleLayout}>
@@ -119,7 +128,6 @@ export const VideoFeed = () => {
         data={feedData}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
-        estimatedItemSize={feedDimensions.height}
         pagingEnabled
         showsVerticalScrollIndicator={false}
         viewabilityConfig={viewabilityConfig.current}
@@ -127,7 +135,6 @@ export const VideoFeed = () => {
         onEndReached={handleEndReached}
         onEndReachedThreshold={0.5}
         drawDistance={feedDimensions.height * 2}
-        disableAutoLayout
       />
 
       <UpscaleToast ref={upscaleToastRef} />
