@@ -29,7 +29,7 @@ export const VideoCard = ({
     StorageService.isUpscaleEnabled()
   );
 
-  const videoSource = item.upscaledUrl || item.standardUrl;
+  const videoSource = item.standardUrl || item.upscaledUrl;
 
   const player = useVideoPlayer(videoSource, (p) => {
     p.loop = true;
