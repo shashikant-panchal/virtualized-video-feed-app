@@ -1,0 +1,272 @@
+export const INITIAL_FEED_ITEMS = [
+  {
+    "id": "reel-10395606",
+    "type": "video",
+    "handle": "@dmitry_marchenkov",
+    "description": "Sunlight seen through leaves",
+    "standardUrl": "https://videos.pexels.com/video-files/10395606/10395606-hd_1080_1920_24fps.mp4",
+    "upscaledUrl": "https://videos.pexels.com/video-files/10395606/10395606-hd_1080_1920_24fps.mp4",
+    "likes": 90067,
+    "comments": 2768,
+    "shares": 5425
+  },
+  {
+    "id": "reel-34942485",
+    "type": "video",
+    "handle": "@sergio_raffa",
+    "description": "Serene forest trees reaching towards the sky",
+    "standardUrl": "https://videos.pexels.com/video-files/34942485/14801490_1080_1920_30fps.mp4",
+    "upscaledUrl": "https://videos.pexels.com/video-files/34942485/14801490_1080_1920_30fps.mp4",
+    "likes": 115961,
+    "comments": 3155,
+    "shares": 6498
+  },
+  {
+    "id": "reel-32200251",
+    "type": "video",
+    "handle": "@c1_superstar",
+    "description": "Stunning view of green alpine mountains",
+    "standardUrl": "https://videos.pexels.com/video-files/32200251/13732691_1080_1920_60fps.mp4",
+    "upscaledUrl": "https://videos.pexels.com/video-files/32200251/13732691_1080_1920_60fps.mp4",
+    "likes": 119579,
+    "comments": 4651,
+    "shares": 5936
+  },
+  {
+    "id": "reel-32486336",
+    "type": "video",
+    "handle": "@ahmet_mert",
+    "description": "Stunning mountain peaks in winter snow",
+    "standardUrl": "https://videos.pexels.com/video-files/32486336/13853123_1080_1920_60fps.mp4",
+    "upscaledUrl": "https://videos.pexels.com/video-files/32486336/13853123_1080_1920_60fps.mp4",
+    "likes": 130470,
+    "comments": 4438,
+    "shares": 5222
+  },
+  {
+    "id": "sponsor-1",
+    "type": "sponsored",
+    "brand": "LinkSphere UltraCloud",
+    "title": "Next-Gen Edge Media Delivery at 60 FPS",
+    "description": "Sub-10ms video streaming and real-time upscaling architecture.",
+    "ctaText": "Explore Platform",
+    "ctaUrl": "https://linksphere.tech",
+    "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "reel-28798096",
+    "type": "video",
+    "handle": "@ertabbt",
+    "description": "Majestic waterfalls in lush green forest",
+    "standardUrl": "https://videos.pexels.com/video-files/28798096/12480265_1080_1920_30fps.mp4",
+    "upscaledUrl": "https://videos.pexels.com/video-files/28798096/12480265_1080_1920_30fps.mp4",
+    "likes": 102629,
+    "comments": 3390,
+    "shares": 8069
+  },
+  {
+    "id": "reel-31002853",
+    "type": "video",
+    "handle": "@c1_superstar",
+    "description": "Beautiful winter waterfall cascade",
+    "standardUrl": "https://videos.pexels.com/video-files/31002853/13252265_1080_1920_60fps.mp4",
+    "upscaledUrl": "https://videos.pexels.com/video-files/31002853/13252265_1080_1920_60fps.mp4",
+    "likes": 60654,
+    "comments": 2716,
+    "shares": 2704
+  },
+  {
+    "id": "reel-20151149",
+    "type": "video",
+    "handle": "@neromanova",
+    "description": "Surfing",
+    "standardUrl": "https://videos.pexels.com/video-files/20151149/20151149-hd_1080_1920_30fps.mp4",
+    "upscaledUrl": "https://videos.pexels.com/video-files/20151149/20151149-hd_1080_1920_30fps.mp4",
+    "likes": 96870,
+    "comments": 4206,
+    "shares": 7625
+  },
+  {
+    "id": "reel-8713108",
+    "type": "video",
+    "handle": "@taryn_elliott",
+    "description": "A man getting his surfboard",
+    "standardUrl": "https://videos.pexels.com/video-files/8713108/8713108-hd_1080_1920_25fps.mp4",
+    "upscaledUrl": "https://videos.pexels.com/video-files/8713108/8713108-hd_1080_1920_25fps.mp4",
+    "likes": 62264,
+    "comments": 2958,
+    "shares": 3993
+  },
+  {
+    "id": "sponsor-2",
+    "type": "sponsored",
+    "brand": "AeroOptics Cinema",
+    "title": "Cinematic Mobile Filters & Optics",
+    "description": "Precision cinema glass lenses engineered for mobile creators.",
+    "ctaText": "Shop Optics",
+    "ctaUrl": "https://linksphere.tech",
+    "imageUrl": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "reel-4824402",
+    "type": "video",
+    "handle": "@artem_podrez",
+    "description": "Young men doing a skateboard tricks",
+    "standardUrl": "https://videos.pexels.com/video-files/4824402/4824402-hd_1080_1920_30fps.mp4",
+    "upscaledUrl": "https://videos.pexels.com/video-files/4824402/4824402-hd_1080_1920_30fps.mp4",
+    "likes": 60224,
+    "comments": 2613,
+    "shares": 3540
+  },
+  {
+    "id": "reel-36941575",
+    "type": "video",
+    "handle": "@gabrielli__pereira",
+    "description": "Dynamic skateboarding in urban skate park",
+    "standardUrl": "https://videos.pexels.com/video-files/36941575/15649823_1080_1920_60fps.mp4",
+    "upscaledUrl": "https://videos.pexels.com/video-files/36941575/15649823_1080_1920_60fps.mp4",
+    "likes": 101600,
+    "comments": 3383,
+    "shares": 9057
+  },
+  {
+    "id": "reel-31053507",
+    "type": "video",
+    "handle": "@talis__mauricio",
+    "description": "Group road cycling on scenic pathway",
+    "standardUrl": "https://videos.pexels.com/video-files/31053507/13271141_1080_1920_30fps.mp4",
+    "upscaledUrl": "https://videos.pexels.com/video-files/31053507/13271141_1080_1920_30fps.mp4",
+    "likes": 72597,
+    "comments": 2846,
+    "shares": 4040
+  },
+  {
+    "id": "reel-39381842",
+    "type": "video",
+    "handle": "@antonio_jord\u00e1n_sanchis",
+    "description": "Cyclists riding along urban pathway",
+    "standardUrl": "https://videos.pexels.com/video-files/39381842/16766250_1080_1920_30fps.mp4",
+    "upscaledUrl": "https://videos.pexels.com/video-files/39381842/16766250_1080_1920_30fps.mp4",
+    "likes": 155540,
+    "comments": 5884,
+    "shares": 9306
+  },
+  {
+    "id": "sponsor-3",
+    "type": "sponsored",
+    "brand": "AlpineGear Pro",
+    "title": "All-Weather High-Altitude Outerwear",
+    "description": "Ultralight stormproof shells crafted for backcountry expeditions.",
+    "ctaText": "View Collection",
+    "ctaUrl": "https://linksphere.tech",
+    "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "reel-5275210",
+    "type": "video",
+    "handle": "@cottonbro_studio",
+    "description": "View of basketball court and balls",
+    "standardUrl": "https://videos.pexels.com/video-files/5275210/5275210-hd_720_1366_25fps.mp4",
+    "upscaledUrl": "https://videos.pexels.com/video-files/5275210/5275210-hd_720_1366_25fps.mp4",
+    "likes": 127175,
+    "comments": 4958,
+    "shares": 5299
+  },
+  {
+    "id": "reel-20521157",
+    "type": "video",
+    "handle": "@gerardo_rend\u00f3n",
+    "description": "A man playing basketball on a court",
+    "standardUrl": "https://videos.pexels.com/video-files/20521157/20521157-hd_1080_1920_60fps.mp4",
+    "upscaledUrl": "https://videos.pexels.com/video-files/20521157/20521157-hd_1080_1920_60fps.mp4",
+    "likes": 91172,
+    "comments": 3097,
+    "shares": 6456
+  },
+  {
+    "id": "reel-34449247",
+    "type": "video",
+    "handle": "@khezez___\u062e\u0632\u0627\u0632",
+    "description": "Nighttime padel match with intense focus",
+    "standardUrl": "https://videos.pexels.com/video-files/34449247/14597453_1080_1920_60fps.mp4",
+    "upscaledUrl": "https://videos.pexels.com/video-files/34449247/14597453_1080_1920_60fps.mp4",
+    "likes": 53538,
+    "comments": 1383,
+    "shares": 2731
+  },
+  {
+    "id": "reel-10340767",
+    "type": "video",
+    "handle": "@cottonbro_studio",
+    "description": "Hand rolling tennis racket",
+    "standardUrl": "https://videos.pexels.com/video-files/10340767/10340767-hd_720_1366_25fps.mp4",
+    "upscaledUrl": "https://videos.pexels.com/video-files/10340767/10340767-hd_720_1366_25fps.mp4",
+    "likes": 104319,
+    "comments": 3331,
+    "shares": 7883
+  },
+  {
+    "id": "sponsor-4",
+    "type": "sponsored",
+    "brand": "TerraTrek Navigation",
+    "title": "Satellite Topographic Mapping on Mobile",
+    "description": "Offline 3D trail tracking with sub-meter GPS precision.",
+    "ctaText": "Start Free Trail",
+    "ctaUrl": "https://linksphere.tech",
+    "imageUrl": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "reel-30989297",
+    "type": "video",
+    "handle": "@nelemson_g",
+    "description": "Nighttime cityscape with busy traffic",
+    "standardUrl": "https://videos.pexels.com/video-files/30989297/13246954_1080_1920_30fps.mp4",
+    "upscaledUrl": "https://videos.pexels.com/video-files/30989297/13246954_1080_1920_30fps.mp4",
+    "likes": 141510,
+    "comments": 4858,
+    "shares": 7581
+  },
+  {
+    "id": "reel-38859042",
+    "type": "video",
+    "handle": "@emrul_kausar_emon",
+    "description": "Aerial view of dhaka cityscape in 4k",
+    "standardUrl": "https://videos.pexels.com/video-files/38859042/16518345_1080_1920_24fps.mp4",
+    "upscaledUrl": "https://videos.pexels.com/video-files/38859042/16518345_1080_1920_24fps.mp4",
+    "likes": 82266,
+    "comments": 1943,
+    "shares": 4179
+  },
+  {
+    "id": "reel-34237962",
+    "type": "video",
+    "handle": "@shubham_singh",
+    "description": "Man hiking outdoor trail with backpack",
+    "standardUrl": "https://videos.pexels.com/video-files/34237962/14509668_1080_1920_60fps.mp4",
+    "upscaledUrl": "https://videos.pexels.com/video-files/34237962/14509668_1080_1920_60fps.mp4",
+    "likes": 147421,
+    "comments": 6378,
+    "shares": 8353
+  },
+  {
+    "id": "reel-35686352",
+    "type": "video",
+    "handle": "@david_torres",
+    "description": "Hiker walking mountain trail with dog",
+    "standardUrl": "https://videos.pexels.com/video-files/35686352/15124411_1080_1920_30fps.mp4",
+    "upscaledUrl": "https://videos.pexels.com/video-files/35686352/15124411_1080_1920_30fps.mp4",
+    "likes": 74590,
+    "comments": 1803,
+    "shares": 4916
+  },
+  {
+    "id": "sponsor-5",
+    "type": "sponsored",
+    "brand": "LinkSphere Media Labs",
+    "title": "Zero CLS Virtualized Feed Architectures",
+    "description": "Engineered for 60+ FPS performance on React Native & Expo.",
+    "ctaText": "Read Whitepaper",
+    "ctaUrl": "https://linksphere.tech",
+    "imageUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80"
+  }
+];
